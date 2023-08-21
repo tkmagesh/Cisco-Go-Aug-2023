@@ -29,3 +29,17 @@
 ## Introduction ##
 - Run a go program
     - > go run <filename.go>
+- Create a build
+    - > go build <filename.go>
+    - > go build -o <output_file> <filename.go>
+
+- To get the list of environment variables used by go tool
+    - > go env
+- Environment variables for cross compilation
+    - GOARCH
+    - GOOS
+- To get the list of supported platforms/process arch for cross compilation
+    - > go tool dist list
+- To cross compile
+    - > GOOS=<target OS> GOARCH=<target processor arch> go build -o <output> <filename.go>
+    - > ex: GOOS=windows GOARCH=386 go build -o build/hw 01-hello-world.go
