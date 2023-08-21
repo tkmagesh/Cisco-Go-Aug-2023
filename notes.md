@@ -23,4 +23,5 @@
 
 ## Software Requirements ##
 - Go Tools (https://go.dev/dl)
-
+- Visual Studio Code (https://code.visualstudio.com)
+- Go Extension for VSCode (https://marketplace.visualstudio.com/items?itemName=golang.Go)
