@@ -22,4 +22,7 @@ func main() {
 	)
 
 	fmt.Println(pi, app_version)
+
+	// unused constants are allowed everywhere (package / function)
+	const name = "Cisco"
 }
