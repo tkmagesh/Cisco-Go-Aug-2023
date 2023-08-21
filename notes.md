@@ -98,3 +98,12 @@
 - for
 - break & continue
 - Labels & goto
+
+## Functions ##
+- Functions can return more than 1 result
+- Variadic functions are supported (functions with varying number of arguments)
+- Anonymous functions 
+- Higher Order Functions (functions as data)
+    - Assign functions as values to variables
+    - Pass functions as arguments to other functions
+    - Return functions as a return values from other functions
