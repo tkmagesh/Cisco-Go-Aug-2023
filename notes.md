@@ -73,3 +73,10 @@
 - byte (alias for uint8)
 - rune (alias for int32)(unicode code point)
 
+## Variables ##
+- Function Scope
+    - Cannot have unused variables
+    - Can use :=
+- Package Scope
+    - Can have unused variables
+    - Cannot use :=
