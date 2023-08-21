@@ -27,6 +27,8 @@
 - Go Extension for VSCode (https://marketplace.visualstudio.com/items?itemName=golang.Go)
 
 ## Introduction ##
+- Documentation
+    - https://pkg.go.dev/std
 - Run a go program
     - > go run <filename.go>
 - Create a build
@@ -41,5 +43,33 @@
 - To get the list of supported platforms/process arch for cross compilation
     - > go tool dist list
 - To cross compile
-    - > GOOS=<target OS> GOARCH=<target processor arch> go build -o <output> <filename.go>
+    ```
+     GOOS=<target OS> GOARCH=<target processor arch> go build -o <output> <filename.go>
+    ```    
     - > ex: GOOS=windows GOARCH=386 go build -o build/hw 01-hello-world.go
+
+## Data Types ##
+- bool
+- string
+
+- int
+- int8
+- int16
+- int32
+- int64
+
+- uint
+- uint8
+- uint16
+- uint32
+- uint64
+
+- float32
+- float64
+
+- complex64 (real [float32] + imaginary [float32])
+- complex128 (real [float64] + imaginary [float64])
+
+- byte (alias for uint8)
+- rune (alias for int32)(unicode code point)
+

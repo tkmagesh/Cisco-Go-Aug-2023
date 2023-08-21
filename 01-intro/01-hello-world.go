@@ -3,6 +3,7 @@
 package main
 
 /* import dependency packages */
+import "fmt"
 
 /* package level variables & type declarations */
 
@@ -11,7 +12,8 @@ package main
 /* main function */
 /* main function is the starting point of the application */
 func main() {
-	print("Hello World!")
+	// print("Hello World!\n")
+	fmt.Println("Hello World")
 }
 
 /* other functions */
