@@ -23,16 +23,19 @@ func main() {
 	greetMsg := getGreetMsg("Suresh")
 	fmt.Print(greetMsg)
 
-	/*
-		result := func(x, y int) int {
-			return x + y
-		}(100, 200)
-		fmt.Println(result)
+	var add func(int, int) int
+	add = func(x, y int) int {
+		return x + y
+	}
+	result := add(100, 200)
+	fmt.Println(result)
 
-		q, r := func(x, y int) (quotient int, remainder int) {
-			quotient, remainder = x/y, x%y
-			return
-		}(100, 7)
-		fmt.Printf("Dividing 100 by 7, quotient = %d and remainder = %d\n", q, r)
-	*/
+	var divide func(int, int) (int, int)
+	divide = func(x, y int) (quotient int, remainder int) {
+		quotient, remainder = x/y, x%y
+		return
+	}
+	q, r := divide(100, 7)
+	fmt.Printf("Dividing 100 by 7, quotient = %d and remainder = %d\n", q, r)
+
 }
