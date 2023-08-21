@@ -16,6 +16,17 @@
 ## Golang ##
 - Why Golang?
     - Simplicity
+        - ONLY 25 keywords
+        - No access modifiers (public, private, protected)
+        - No classes (only structs)
+        - No inheritance (only composition)
+        - No reference type (everything is a value in go. Use pointers for references)
+        - No exceptions (only errors which are just values)
+        - No try-catch-finally constructs
+        - No pointer arithmatic
+        - No implicit type conversion (every type conversion has to be explicit)
+        - No function overloading
+        - No operator overloading
     - Performance
         - On par with C++
     - Close to hardware
@@ -80,3 +91,10 @@
 - Package Scope
     - Can have unused variables
     - Cannot use :=
+
+## Constructs ##
+- if else
+- switch case (with "fallthrough")
+- for
+- break & continue
+- Labels & goto
