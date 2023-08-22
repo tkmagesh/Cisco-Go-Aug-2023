@@ -117,3 +117,12 @@
     - fmt.Errorf()
 - Check if an error is of particular type
     - errors.Is()
+
+## Deferred Functions ##
+- Postpone the execution of the function until the current function execution is completed
+
+## Panic & Recovery ##
+- Panic 
+    - The state of the application where the application execution cannot proceed any further
+- "recover()" can be used to gain access to the error that resulted in a panic
+- "panic()" can be used to programmatically create a panic
