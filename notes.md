@@ -142,3 +142,5 @@
 - Slice == Pointer to an underlying array
 - Use the "append()" to add more data
 ![image slice](./images/slices.png)
+### Map ###
+- typed key/value pair collection
