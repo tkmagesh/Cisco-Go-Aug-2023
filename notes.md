@@ -161,7 +161,24 @@
 - To build a module
     - > go build .
 
-    
+### 3rd Party Modules ###
+- download (GOPATH/pkg) and update the dependency 
+    - > go get <module>
+    - > ex: go get github.com/fatih/color
+- update the mod file
+    - > go mod tidy
+- install 3rd party command line tools built in go (GOPATH/bin)
+    - > go install <module>
+- download the dependencies documented in the go.mod file
+    - > go mod download
+- to localize the dependencies
+    - > go mod vendor
+- Other useful commands
+    - > go mod graph
+    - > go mod why <module>
+- Reference : https://go.dev/ref/mod
+
+
 ### Package ###
 - Internal organization of code in a module
 - typically a folder
