@@ -130,3 +130,10 @@
 ## Pointers ##
 - Everything is a value in Go
 - Use pointers to send data around as references
+
+## Collections ##
+- Array
+- Slice
+- Map
+### Array ###
+- Fixed size typed collection
