@@ -126,3 +126,7 @@
     - The state of the application where the application execution cannot proceed any further
 - "recover()" can be used to gain access to the error that resulted in a panic
 - "panic()" can be used to programmatically create a panic
+
+## Pointers ##
+- Everything is a value in Go
+- Use pointers to send data around as references
