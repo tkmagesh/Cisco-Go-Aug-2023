@@ -185,3 +185,6 @@
 - All the files in a package are considered to be one entity
 - Everything in a package is by default considered private
 - Public entities names must start with 'uppercase'
+
+## OOP in Go ##
+### Class (aka struct) ###
