@@ -137,3 +137,7 @@
 - Map
 ### Array ###
 - Fixed size typed collection
+### Slice ###
+- Varying sized typed collection
+- Slice == Pointer to an underlying array
+- Use the "append()" to add more data
