@@ -107,3 +107,13 @@
     - Assign functions as values to variables
     - Pass functions as arguments to other functions
     - Return functions as a return values from other functions
+
+## Error Handling ##
+- No exceptions, only errors
+- errors are just values which are returned from a function
+- Create an instance of an error
+    - errors.New()
+    - errors.Join()
+    - fmt.Errorf()
+- Check if an error is of particular type
+    - errors.Is()
