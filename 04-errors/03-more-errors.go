@@ -6,13 +6,18 @@ import (
 )
 
 var DivideByZeroError error = errors.New("divide by 0 error")
+var InvalidInputError error = errors.New("invalid input error")
 
 func main() {
 
 	divisor := 0
 	q, r, err := divide(100, divisor)
 	// handle the error
-	if err == DivideByZeroError {
+	fmt.Println(err)
+	if errors.Is(err, InvalidInputError) {
+		fmt.Println("Invalid inputs")
+	}
+	if errors.Is(err, DivideByZeroError) {
 		fmt.Println("Please do not attempt to divide by 0")
 		return
 	}
@@ -37,12 +42,20 @@ func divide(x, y int) (int, int, error) {
 */
 
 func divide(x, y int) (quotient, remainder int, err error) {
-
+	inputErr := validateInput(x, y)
 	if y == 0 {
-		err = DivideByZeroError
+		// err = errors.Join(inputErr, DivideByZeroError)
+		err = fmt.Errorf("errors occurred : %w and %w", inputErr, DivideByZeroError)
 		return
 	}
 	quotient = x / y
 	remainder = x % y
 	return
+}
+
+func validateInput(x, y int) error {
+	if y == 0 {
+		return InvalidInputError
+	}
+	return nil
 }
