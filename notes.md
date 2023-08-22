@@ -144,3 +144,27 @@
 ![image slice](./images/slices.png)
 ### Map ###
 - typed key/value pair collection
+## Modularity ##
+- Achieved using modules & packages
+### Module ###
+- Any code that has to be versioned & deployed together
+- a module = a folder with go.mod file
+- go.mod file
+    - module name
+        - convention (repo path)
+    - targetted version of the go runtime
+    - dependent modules (optional)
+- created using "go mod init <module_name>"
+
+- To run a module
+    - > go run .
+- To build a module
+    - > go build .
+
+    
+### Package ###
+- Internal organization of code in a module
+- typically a folder
+- All the files in a package are considered to be one entity
+- Everything in a package is by default considered private
+- Public entities names must start with 'uppercase'
