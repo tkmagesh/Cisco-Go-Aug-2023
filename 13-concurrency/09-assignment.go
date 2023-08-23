@@ -16,7 +16,7 @@ func main() {
 
 	/*
 		Sum all the numbers in "data" concurrently
-		   Note : spin one goroutine for each pair of numbers
+		   Note : spin one goroutine (add) for each pair of numbers
 	*/
 }
 
