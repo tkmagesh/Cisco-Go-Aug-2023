@@ -49,12 +49,17 @@ func aggregate(ch chan int) chan int {
 	resultCh := make(chan int)
 	go func() {
 		result := 0
-		for {
-			if sum, isOpen := <-ch; isOpen {
-				result += sum
-				continue
+		/*
+			for {
+				if sum, isOpen := <-ch; isOpen {
+					result += sum
+					continue
+				}
+				break
 			}
-			break
+		*/
+		for sum := range ch {
+			result += sum
 		}
 		resultCh <- result
 	}()

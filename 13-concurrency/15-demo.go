@@ -12,15 +12,24 @@ import (
 func main() {
 	ch := make(chan int)
 	go generateNos(ch)
-	for {
-		time.Sleep(500 * time.Millisecond)
-		if data, isOpen := <-ch; isOpen {
-			fmt.Println(data)
-			continue
+	/*
+		for {
+			time.Sleep(500 * time.Millisecond)
+			if data, isOpen := <-ch; isOpen {
+				fmt.Println(data)
+				continue
+			}
+			fmt.Println("[consumer] all data received.. channel is closed... exiting")
+			break
 		}
-		fmt.Println("[consumer] all data received.. channel is closed... exiting")
-		break
+	*/
+
+	//implementing the above using for..range
+	for data := range ch {
+		time.Sleep(500 * time.Millisecond)
+		fmt.Println(data)
 	}
+	fmt.Println("[consumer] all data received.. channel is closed... exiting")
 }
 
 // producer
