@@ -204,3 +204,8 @@
     - semaphore based counter
     - maintains an internal counter
     - has the ability to block the execution of the function until the counter becomes zero
+- Race detection
+    - Use the "--race" switch
+        - > go run --race <filename.go>
+        - > go build --race <filename.go>
+    - DO NOT create a production build with race detector
