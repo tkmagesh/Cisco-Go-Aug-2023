@@ -1,5 +1,13 @@
 package main
 
+import (
+	"fmt"
+	"sync"
+)
+
+var total int
+var mutex sync.Mutex
+
 func main() {
 	data := [][]int{
 		{10, 20},
@@ -13,6 +21,16 @@ func main() {
 		{80, 60},
 		{30, 60},
 	}
+	wg := sync.WaitGroup{}
+	for _, pair := range data {
+		wg.Add(1)
+		go func(pair []int) {
+			add(pair[0], pair[1])
+			wg.Done()
+		}(pair)
+	}
+	wg.Wait()
+	fmt.Println(total)
 
 	/*
 		Sum all the numbers in "data" concurrently
@@ -21,5 +39,11 @@ func main() {
 }
 
 func add(x, y int) {
-
+	fmt.Printf("x = %d and y = %d\n", x, y)
+	sum := x + y
+	mutex.Lock()
+	{
+		total += sum
+	}
+	mutex.Unlock()
 }
