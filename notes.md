@@ -209,3 +209,20 @@
         - > go run --race <filename.go>
         - > go build --race <filename.go>
     - DO NOT create a production build with race detector
+- Channels
+    - Declaration
+        - > var <var_name> chan <data_type>
+        - > ex: var ch chan int
+    - Initialization
+        - > ch = make(chan int)
+    - Operations ( using the channel operator (<-) )
+        - send
+            - > ch <- 100
+        - receive 
+            - > data := <-ch
+    - Channel Behaviors
+        - A Receive operation
+            - is ALWAYS a blocking operation (blocked until the data becomes available in the channel)
+        - A Send operation
+            - is blocked until a Receive operation is initiated
+        ![image channel_behaviors](./images/channel_behavior.png)
