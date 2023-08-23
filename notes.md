@@ -188,3 +188,19 @@
 
 ## OOP in Go ##
 ### Class (aka struct) ###
+
+## Concurrent Programming ##
+- Built in scheduler
+- Concurrency features are built in the language
+    - go keyword
+    - channel data type
+    - channel operator (<-)
+    - range construct
+    - select-case construct
+- APIs support
+    - sync package
+    - sync/atomic package
+- sync.WaitGroup
+    - semaphore based counter
+    - maintains an internal counter
+    - has the ability to block the execution of the function until the counter becomes zero
