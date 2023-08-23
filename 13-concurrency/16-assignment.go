@@ -25,29 +25,38 @@ func main() {
 		{80, 60},
 		{30, 60},
 	}
-	wg := sync.WaitGroup{}
+	ch := make(chan int)
+	wg := &sync.WaitGroup{}
 	for _, pair := range data {
 		wg.Add(1)
-		go func(pair []int) {
-			add(pair[0], pair[1])
-			wg.Done()
-		}(pair)
+		go add(pair[0], pair[1], ch, wg)
 	}
+	resultCh := aggregate(ch)
 	wg.Wait()
-	fmt.Println(total)
+	close(ch)
+	fmt.Println(<-resultCh)
 
-	/*
-		Sum all the numbers in "data" concurrently
-		   Note : spin one goroutine (add) for each pair of numbers
-	*/
 }
 
-func add(x, y int) {
+func add(x, y int, ch chan int, wg *sync.WaitGroup) {
+	defer wg.Done()
 	fmt.Printf("x = %d and y = %d\n", x, y)
 	sum := x + y
-	mutex.Lock()
-	{
-		total += sum
-	}
-	mutex.Unlock()
+	ch <- sum
+}
+
+func aggregate(ch chan int) chan int {
+	resultCh := make(chan int)
+	go func() {
+		result := 0
+		for {
+			if sum, isOpen := <-ch; isOpen {
+				result += sum
+				continue
+			}
+			break
+		}
+		resultCh <- result
+	}()
+	return resultCh
 }
